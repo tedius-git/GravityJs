@@ -1,3 +1,5 @@
+import playIcon from '/player-play.svg';
+import pauseIcon from '/player-pause.svg';
 import "./index.css";
 import { adjustCanvasResolution, colors, createPlanet, deleteFarPlanets, drawPlanets, updateAccelerations, updatePositions, updateVelocities } from "./utils.js";
 
@@ -44,7 +46,7 @@ const pauseButton = document.getElementById("pauseButton");
 pauseButton.addEventListener("click", () => {
     paused = !paused; // Alternar entre pausado y no pausado
     // Change img if paused or not
-    document.getElementById("pauseImage").src = paused ? "/player-play.svg" : "/player-pause.svg"
+    document.getElementById("pauseImage").src = paused ? playIcon : pauseIcon
     // Change bg color if paused or not
     pauseButton.style.background = paused ? colors.green : colors.red
 });
