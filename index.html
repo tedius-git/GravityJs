@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/GravityJs/planet.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GravityJs</title>
-    <script type="module" crossorigin src="/GravityJs/assets/index-rSsEcbJ-.js"></script>
-    <link rel="stylesheet" crossorigin href="/GravityJs/assets/index-BO3jKuY6.css">
+    <script type="module" crossorigin src="/GravityJs/assets/index-D8wWYtGR.js"></script>
+    <link rel="stylesheet" crossorigin href="/GravityJs/assets/index-DnIPHiu4.css">
   </head>
   <body
-    class="h-screen bg-crust"
+    class="h-screen dark:bg-dcrust bg-lcrust"
   >
     <div class="flex flex-col h-screen">
-      <!-- Title -->
-      <div class="flex w-max p-4 mx-8 mt-8 rounded-full bg-base">
-        <img class="size-16" src="/GravityJs/planet.svg" alt="">
-        <div class="rounded-full w-full flex items-center p-4 h-16">
-          <h1 class="text-white text-4xl font-semibold">GravityJs</h1>
+      <div class="flex flex-row items-center">
+        <!-- Title -->
+        <div class="flex w-max p-4 mx-8 mt-8 rounded-full dark:bg-dbase bg-lbase">
+          <img class="size-16" src="/GravityJs/planet.svg" alt="">
+          <div class="rounded-full w-full flex items-center p-4 h-16">
+            <h1 class="dark:text-white text-black text-4xl font-semibold">GravityJs</h1>
+          </div>
+        </div>
+        <div class="flex-grow">
+        </div>
+        <div class="flex w-max h-10 items-center p-4 mx-8 mt-8 rounded-full dark:bg-dbase bg-lbase">
+          <button type="button" id="modeButton" class="cursor-pointer m-4">
+            <img src="/GravityJs/light-mode.svg" alt="" id="modeImage" class="size-6">
+          </button>
         </div>
       </div>
       <!-- Main -->
-      <div class="bg-mantle flex flex-row rounded-3xl p-4 gap-4 m-8 h-full">
-        <canvas class="bg-crust flex rounded-xl p-4 h-full w-full" id="app">
+      <div class="dark:bg-mantle bg-lmantle flex flex-row rounded-3xl p-4 gap-4 m-8 h-full">
+        <canvas class="dark:bg-dcrust bg-lcrust flex rounded-xl p-4 h-full w-full" id="app">
         </canvas>
         <div class="flex flex-col items-center justify-between rounded-xl p-4 h-full w-24 gap-4">
           <button type="button" id="pauseButton" class="bg-cred p-3 rounded-lg h-min cursor-pointer transition duration-300 ease-in-out hover:scale-120">
@@ -30,7 +39,7 @@
           <button type="button" id="plusPlanetButton" class="bg-mauve p-3 rounded-lg h-min cursor-pointer transition duration-300 ease-in-out hover:scale-120">
             <img src="/GravityJs/plus.svg" alt="" class="size-6">
           </button>
-          <p id="coords" class="text-white text-xs bg-subtext rounded-md text-center font-semibold w-full mt-auto"></p>
+          <p id="coords" class="dark:text-white text-black dark:bg-dsubtext bg-lsubtext text-xs rounded-md text-center font-semibold w-full mt-auto"></p>
         </div>
       </div>
     </div>
