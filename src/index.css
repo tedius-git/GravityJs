@@ -1,10 +1,16 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-crust: #11111b;
-  --color-base: #1e1e2e;
+  --color-dcrust: #11111b;
+  --color-lcrust: #eff1f5;
+  --color-dbase: #1e1e2e;
+  --color-lbase: #e6e9ef;
   --color-mantle: #181825;
-  --color-subtext: #313244;
+  --color-lmantle: #dce0e8;
+  --color-dsubtext: #313244;
+  --color-lsubtext: #bcc0cc;
   --color-mauve: #cba6f7;
   --color-cgreen: #a6e3a1;
   --color-cred: #f38ba8;

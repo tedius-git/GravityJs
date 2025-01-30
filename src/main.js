@@ -1,5 +1,8 @@
 import playIcon from '/player-play.svg';
 import pauseIcon from '/player-pause.svg';
+import lightIcon from '/light-mode.svg';
+import darkIcon from '/dark-mode.svg';
+
 import "./index.css";
 import { adjustCanvasResolution, colors, createPlanet, deleteFarPlanets, drawPlanets, updateAccelerations, updatePositions, updateVelocities } from "./utils.js";
 
@@ -7,7 +10,6 @@ let lastTime = performance.now();
 let paused = false
 
 let planets = [];
-
 
 // Main function to draw on the canvas
 function draw(currentTime) {
@@ -63,6 +65,20 @@ plusPlanetButton.addEventListener("click", () => {
     const m = Math.floor(Math.random() * 4000)
     planets.push(createPlanet(x, y, m))
 });
+
+//Dark-light mode Button
+const modeButton = document.getElementById("modeButton");
+modeButton.addEventListener("click", () => {
+    const htmlElement = document.querySelector('html')
+
+    if (htmlElement.classList.contains('dark')) {
+        htmlElement.classList.remove('dark')
+        document.getElementById("modeImage").src = darkIcon
+    } else {
+        htmlElement.classList.add('dark')
+        document.getElementById("modeImage").src = lightIcon
+    }
+})
 
 // Show mouse coordinates on canvas
 const canvas = document.getElementById('app');
